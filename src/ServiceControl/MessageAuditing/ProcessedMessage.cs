@@ -39,5 +39,7 @@
         public Dictionary<string, string> Headers { get; set; }
          
         public DateTime ProcessedAt { get; set; }
+
+		public DateTime Timestamp { get; set; }
     }
 }

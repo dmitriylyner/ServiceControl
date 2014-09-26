@@ -1,6 +1,7 @@
 ﻿namespace ServiceControl.MessageAuditing.Handlers
 {
-    using Contracts.Operations;
+	using System;
+	using Contracts.Operations;
     using NServiceBus;
     using Raven.Client;
 
@@ -11,9 +12,8 @@
         public void Handle(ImportSuccessfullyProcessedMessage message)
         {
             var auditMessage = new ProcessedMessage(message);
-
+			Console.WriteLine("I am about to save a message to RavenDB");
             Session.Store(auditMessage);
         }
-
     }
 }

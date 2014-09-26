@@ -34,7 +34,6 @@
         public bool Handle(TransportMessage message)
         {
             InnerHandle(message);
-
             return true;
         }
 
